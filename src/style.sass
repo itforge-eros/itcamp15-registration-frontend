@@ -1,0 +1,253 @@
+body
+  margin: 0
+  color: #555
+  min-height: 100vh
+  // font-weight: 300
+  font-family: 'CS ChatThai', Roboto, "Helvetica Neue", "Sukhumvit Set", Avenir, -apple-system, BlinkMacSystemFont, "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", sans-serif, Tahoma !important
+  // background-image: linear-gradient(to top, #99ccff, #ffffff)
+  // background-image: linear-gradient(45deg, #00B7FF, #FFFFC7)
+  // background-image: linear-gradient(45deg, #8FBFFF, #C97FD7)
+  background: linear-gradient(170.48deg, #326BAB -13.52%, #473276 43.7%, #98682E 128.36%)
+  background-attachment: fixed
+
+// @font-face 
+//   font-family: 'FC Lamoon'
+//   src: url('/fonts/subset-FCLamoonBold.woff2') format('woff2')
+//   src: url('/fonts/subset-FCLamoonBold.woff') format('woff')
+//   font-weight: bold
+//   font-style: normal
+
+// @font-face 
+//   font-family: 'FC Lamoon'
+//   src: url('/fonts/subset-FCLamoonRegular.woff2') format('woff2')
+//   src: url('/fonts/subset-FCLamoonRegular.woff') format('woff')
+//   font-weight: normal
+//   font-style: normal
+
+// @font-face 
+//   font-family: 'FC Lamoon'
+//   src: url('/fonts/subset-FCLamoonLight.woff2') format('woff2')
+//   src: url('/fonts/subset-FCLamoonLight.woff') format('woff')
+//   font-weight: 300
+//   font-style: normal
+
+@font-face 
+  font-family: 'CS ChatThai'
+  src: url('/fonts/CSChatThai.woff2') format('woff2')
+  src: url('/fonts/CSChatThai.woff') format('woff')
+  font-weight: normal
+  font-style: normal
+
+*
+  box-sizing: border-box
+  font-family: 'Pridi'
+
+.ant-select.ant-select-enabled 
+  width: 100%
+  min-width: unset !important
+
+.DayPickerInput 
+  width: 100%
+
+.DayPickerInput-OverlayWrapper 
+  z-index: 2
+
+.ant-message
+  font-size: 22px !important
+
+.ant-modal-confirm-body .ant-modal-confirm-content
+  margin-top: 0 !important
+
+.ant-confirm-body .ant-confirm-content 
+  margin-top: 0 !important
+
+.custom-select
+  cursor: pointer
+  font-size: 1.25em
+
+  input 
+    border: none
+    background: transparent
+    text-align: left
+    font-size: 18px
+    line-height: 1.2em
+    width: 100%
+    padding: 0.15em 0.6em
+    letter-spacing: 0.01em
+    min-width: 10em
+    min-height: 40px
+    outline: none
+    transition: 0.4s cubic-bezier(0.22, 0.61, 0.36, 1) all
+    border: 1px solid #E0E0E0
+    border-radius: 4px
+    background: white
+    color: #555
+    
+
+  &.custom-select-error .custom-select__control
+    border-bottom: 2px solid #e74c3c !important
+    background-color: red
+  .custom-select__control--menu-is-open
+     box-shadow: none !important
+  .custom-select__control--is-focused
+      box-shadow: none !important
+  &__placeholder 
+    margin-left: 6px !important
+    font-family: Pridi
+    font-style: normal
+    font-weight: 300
+    line-height: normal
+    font-size: 18px
+    letter-spacing: 0.01em
+    color:#E0E0E0 !important
+  
+  &__value-container 
+    position: absolute !important
+    text-align: left
+    font-size: 18px
+    line-height: 1.2em
+    width: 100%
+    letter-spacing: 0.01em
+    min-width: 10em
+    min-height: 40px
+    max-height: 18px
+    outline: none
+    transition: 0.4s cubic-bezier(0.22, 0.61, 0.36, 1) all
+    border: 1px solid #E0E0E0
+    border-radius: 4px
+    background: white
+    color: #555
+  &__value-container:hover
+    border: 1px solid #E0E0E0
+    // box-shadow: 0 3px 18.5px 2px rgba(0,0,0,0.18)
+    box-shadow: 0 0 0 2px rgba(24,144,255,.4)
+        
+  &__value-container--has-value 
+    position: absolute !important
+    text-align: left
+    font-size: 18px
+    line-height: 1.2em
+    width: 100%
+    letter-spacing: 0.01em
+    min-width: 10em
+    min-height: 40px
+    max-height: 18px
+    outline: none
+    transition: 0.4s cubic-bezier(0.22, 0.61, 0.36, 1) all
+    border: 1px solid #E0E0E0
+    border-radius: 4px
+    background: white
+    color: #555
+    
+
+  &__single-value
+    margin-left: 6px
+    margin-top: 5px
+    font-size: 18px
+  &__has-value
+    
+  &__menu
+    position: absolute !important
+    z-index: 2 !important
+
+    width: 100% !important
+  
+  &__control 
+    border: none !important
+    font-weight: 300
+    text-align: left
+    font-size: 1.08em
+    line-height: 1.3em
+
+    width: 100%
+
+    min-width: 10em
+    outline: none
+    transition: 0.4s cubic-bezier(0.22, 0.61, 0.36, 1) all
+
+    border-radius: 4px
+
+    background: white
+    color: #555
+
+    &::placeholder 
+      font-family: Pridi
+      font-style: normal
+      font-weight: 300
+      line-height: normal
+      font-size: 18px
+      letter-spacing: 0.01em
+      color:#E0E0E0
+    
+  
+
+
+.question-3-image
+  position: relative
+
+  width: 100%
+  max-width: 100%
+
+  margin-top: 0.8em
+  margin-bottom: 0.8em
+  box-shadow: 0 1px 1.5px 1px rgba(0, 0, 0, 0.12)
+
+.particle-backdrop
+  position: fixed
+  z-index: -1
+  left: 0
+  right: 0
+  top: 0
+  bottom: 0
+.ant-calendar-input
+    font-size: 18px
+.custom-date-picker.ant-calendar-picker
+  width: 100%
+
+  &.custom-date-picker-error .ant-calendar-picker-input
+    border-bottom: 2px solid #e74c3c
+  .ant-calendar-date-input-wrap
+    text-align: left
+    font-size: 18px
+    line-height: 1.2em
+    width: 100%
+    padding: 0.15em 0.6em
+    letter-spacing: 0.01em
+    min-width: 10em
+    min-height: 40px
+    outline: none
+    transition: 0.4s cubic-bezier(0.22, 0.61, 0.36, 1) all
+    border: 1px solid #E0E0E0
+    border-radius: 4px
+    background: white
+    color: #555
+  .ant-calendar-picker-input
+    text-align: left
+    font-size: 18px
+    line-height: 1.2em
+    width: 100%
+    padding: 0.15em 0.6em
+    letter-spacing: 0.01em
+    min-width: 10em
+    min-height: 40px
+    outline: none
+    transition: 0.4s cubic-bezier(0.22, 0.61, 0.36, 1) all
+    border: 1px solid #E0E0E0
+    border-radius: 4px
+    background: white
+    color: #555
+    &:hover
+      // box-shadow: 0 3px 18.5px 2px rgba(0,0,0,0.18)
+      box-shadow: 0 0 0 2px rgba(24,144,255,.4)
+      border-color: #E0E0E0
+    &::placeholder 
+      font-family: Pridi
+      font-style: normal
+      font-weight: 300
+      line-height: normal
+      font-size: 18px
+      letter-spacing: 0.01em
+      color:#E0E0E0
+
+
+        

@@ -1,0 +1,16 @@
+{
+  "name": "Junior Webmaster Camp",
+  "short_name": "Junior Webmaster Camp",
+  "icons": [
+    {
+      "src": "/logo/android-icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/",
+  "scope": "/",
+  "theme_color": "#2ecc71",
+  "background_color": "#ffffff",
+  "display": "standalone"
+}
