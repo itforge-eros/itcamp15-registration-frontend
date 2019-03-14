@@ -2,7 +2,7 @@ import React from 'react'
 import {css} from '@emotion/core'
 import Image from 'react-medium-image-zoom'
 
-import {Programming} from '../core/questions'
+// import {Programming} from '../core/questions'
 import devAssignment from '../assets/programming_question.jpg'
 
 const image = {
@@ -13,7 +13,7 @@ const image = {
 
 const Q3Dev = (
   <div>
-    <span>{Programming.Q3}</span>
+    {/* <span>{Programming.Q3}</span> */}
 
     <Image image={image} imageZoom={image} />
   </div>

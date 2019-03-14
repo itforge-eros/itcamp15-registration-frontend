@@ -1,18 +1,18 @@
-import React, { useEffect } from "react";
-import { useState } from "react";
-import styled from "@emotion/styled";
-import Button from "../Button";
-import CharacterCard from "./CharacterCard";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Modal from "../../components/Modal";
-import { navigate } from "@reach/router";
-import { useSwipeable } from "react-swipeable";
+import React, {useEffect} from 'react'
+import {useState} from 'react'
+import styled from '@emotion/styled'
+import Button from '../Button'
+import CharacterCard from './CharacterCard'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import Modal from '../../components/Modal'
+import {navigate} from '@reach/router'
+import {useSwipeable} from 'react-swipeable'
 
 const Container = styled.div`
   display: flex;
   flex-flow: column nowrap;
   width: 100%;
-`;
+`
 
 const Row = styled.div`
   display: flex;
@@ -21,133 +21,138 @@ const Row = styled.div`
   justify-content: space-around;
   width: 100%;
   margin-bottom: 3em;
-`;
+`
 
 const Card = styled.div`
   display: flex;
   algin-items: center;
   flex-flow: column nowrap;
   justify-content: center;
-`;
+`
 
 const Description = styled.label`
   color: white;
   font-size: 1.9em;
   align-self: center;
   margin-top: 2em;
-`;
+`
 
 enum Character {
-  content = "content",
-  design = "design",
-  marketing = "marketing",
-  programming = "programming"
+  app = 'Appermort',
+  game = 'GrindelGame',
+  data = 'Dragota',
+  iot = 'Dobby of Things',
+  network = 'Netherine'
 }
 
-const majors = [
-  Character.content,
-  Character.design,
-  Character.marketing,
-  Character.programming
-];
+const majors = ['app', 'network', 'data', 'game', 'iot']
 
 const useIsMobile = () => {
   const [isMobile, setIsMobile] = useState<boolean>(
-    typeof window !== "undefined" ? window.innerWidth < 780 : false
-  );
+    typeof window !== 'undefined' ? window.innerWidth < 780 : false
+  )
   useEffect(() => {
     const resizeHandler = () => {
-      if (typeof window !== "undefined") {
-        setIsMobile(window.innerWidth < 780);
+      if (typeof window !== 'undefined') {
+        setIsMobile(window.innerWidth < 780)
       }
-    };
-    if (typeof window !== "undefined") {
-      window.addEventListener("resize", resizeHandler);
+    }
+    if (typeof window !== 'undefined') {
+      window.addEventListener('resize', resizeHandler)
     }
     return () => {
-      if (typeof window !== "undefined") {
-        window.removeEventListener("resize", resizeHandler);
+      if (typeof window !== 'undefined') {
+        window.removeEventListener('resize', resizeHandler)
       }
-    };
-  }, []);
-  return isMobile;
-};
+    }
+  }, [])
+  return isMobile
+}
 export default props => {
-  if (typeof window !== "undefined") {
-    const [selector, setSelector] = useState<Character>(Character.content);
-    const [toggle, setIsToggle] = useState<boolean>(false);
-    const [field, setField] = useState<Character>(Character.content);
-    const [modalText, setModalText] = useState<any>(<div />);
-    const isMobile = useIsMobile();
+  if (typeof window !== 'undefined') {
+    const [selector, setSelector] = useState<string>('app')
+    const [toggle, setIsToggle] = useState<boolean>(false)
+    const [field, setField] = useState<string>('app')
+    const [modalText, setModalText] = useState<any>(<div />)
+    const isMobile = useIsMobile()
 
     const selectHandler = () => {
       // if (selector) {
       //   navigate(`/${selector}`);
       // }
-    };
+    }
     const confirm = () => {
       const tempModalText = (
         <div>
-          แน่ใจแล้วหรอว่าจะสมัครสาขา
+          แน่ใจแล้วหรอว่าจะสมัครค่าย
           <br />
-          {`"Web ${selector[0].toUpperCase()}${selector.substr(1)}"`}
+          {`"${Character[selector]}"`}
           <br />
         </div>
-      );
-      setModalText(tempModalText);
-      setIsToggle(!toggle);
-      setField(selector);
-    };
+      )
+      setModalText(tempModalText)
+      setIsToggle(!toggle)
+      setField(selector)
+    }
 
     const DesktopContent = (
       <Row>
         <Card>
           <CharacterCard
-            active={selector === Character.content}
-            onClick={() => setSelector(Character.content)}
+            active={selector === 'app'}
+            onClick={() => setSelector('app')}
             src="/images/content.png"
           />
-          <Description>Web Content</Description>
+          <Description>{Character.app}</Description>
         </Card>
         <Card>
           <CharacterCard
-            active={selector === Character.design}
-            onClick={() => setSelector(Character.design)}
-            src="/images/design.png"
+            active={selector === 'network'}
+            onClick={() => setSelector('network')}
+            src="/images/content.png"
           />
-          <Description>Web Design</Description>
+          <Description>{Character.network}</Description>
         </Card>
         <Card>
           <CharacterCard
-            active={selector === Character.marketing}
-            onClick={() => setSelector(Character.marketing)}
-            src="/images/marketing.png"
+            active={selector === 'data'}
+            onClick={() => setSelector('data')}
+            src="/images/content.png"
           />
-          <Description>Web Marketing</Description>
+          <Description>{Character.data}</Description>
         </Card>
         <Card>
           <CharacterCard
-            active={selector === Character.programming}
-            onClick={() => setSelector(Character.programming)}
-            src="/images/programming.png"
+            active={selector === 'game'}
+            onClick={() => setSelector('game')}
+            src="/images/content.png"
           />
-          <Description>Web Programming</Description>
+          <Description>{Character.game}</Description>
+        </Card>
+        <Card>
+          <CharacterCard
+            active={selector === 'iot'}
+            onClick={() => setSelector('iot')}
+            src="/images/content.png"
+          />
+          <Description>{Character.iot}</Description>
         </Card>
       </Row>
-    );
-    const move = (direction: "left" | "right") => {
+    )
+    const move = (direction: 'left' | 'right') => {
       const majors = [
-        Character.content,
-        Character.design,
-        Character.marketing,
-        Character.programming
-      ];
-      if (direction === "left") {
+        Character.app,
+        Character.game,
+        Character.data,
+        Character.iot,
+        Character.network
+      ]
+      if (direction === 'left') {
         setSelector(
           majors[
             (majors.findIndex(major => major === selector) + 1) % majors.length
           ]
-        );
+        )
       } else {
         setSelector(
           majors[
@@ -155,31 +160,31 @@ export default props => {
               ? majors.length - 1
               : majors.findIndex(major => major === selector) - 1
           ]
-        );
+        )
       }
-    };
+    }
     const swipeHandler = useSwipeable({
       onSwipedLeft: e => {
-        move("left");
+        move('left')
       },
       onSwipedRight: e => {
-        move("right");
+        move('right')
       },
       delta: 10, // min distance(px) before a swipe starts
       preventDefaultTouchmoveEvent: false, // preventDefault on touchmove, *See Details*
       trackTouch: true, // track touch input
       trackMouse: false, // track mouse input
       rotationAngle: 0
-    });
+    })
     const MobileContent = (
       <Row>
         <div
-          onClick={() => move("left")}
-          style={{ position: "absolute", top: "50%", left: "0" }}
+          onClick={() => move('left')}
+          style={{position: 'absolute', top: '50%', left: '0'}}
         >
           <FontAwesomeIcon
             icon="angle-left"
-            style={{ color: "#ffbc5f", fontSize: "3em", cursor: "pointer" }}
+            style={{color: '#ffbc5f', fontSize: '3em', cursor: 'pointer'}}
           />
         </div>
         <Card>
@@ -197,21 +202,21 @@ export default props => {
             <img
               key={i}
               src={`/images/${major}.png`}
-              style={{ display: "none" }}
+              style={{display: 'none'}}
             />
           ))}
         </Card>
         <div
-          onClick={() => move("right")}
-          style={{ position: "absolute", top: "50%", right: "0" }}
+          onClick={() => move('right')}
+          style={{position: 'absolute', top: '50%', right: '0'}}
         >
           <FontAwesomeIcon
             icon="angle-right"
-            style={{ color: "#ffbc5f", fontSize: "3em", cursor: "pointer" }}
+            style={{color: '#ffbc5f', fontSize: '3em', cursor: 'pointer'}}
           />
         </div>
       </Row>
-    );
+    )
     return (
       <Container>
         {isMobile ? MobileContent : DesktopContent}
@@ -225,8 +230,8 @@ export default props => {
           confirmHref={`/${selector}`}
         />
       </Container>
-    );
+    )
   } else {
-    return null;
+    return null
   }
-};
+}

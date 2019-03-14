@@ -1,13 +1,13 @@
-import React from "react";
-import styled from "@emotion/styled";
+import React from 'react'
+import styled from '@emotion/styled'
 
-import { css } from "@emotion/core";
+import {css} from '@emotion/core'
 
-import { Field, BaseFieldProps } from "redux-form";
-import { Fields } from "../core/form";
+import {Field, BaseFieldProps} from 'redux-form'
+import {Fields} from '../core/form'
 
 interface FieldContainerProps {
-  wordy?: boolean;
+  wordy?: boolean
 }
 
 // prettier-ignore
@@ -24,12 +24,12 @@ const Container = styled.div<FieldContainerProps>`
 `
 
 type LabelProps = {
-  float: boolean;
+  float: boolean
   meta: {
-    error: boolean;
-    touched: boolean;
-  };
-} & FieldContainerProps;
+    error: boolean
+    touched: boolean
+  }
+} & FieldContainerProps
 
 // prettier-ignore
 const Label = styled.label<LabelProps>`
@@ -37,7 +37,7 @@ const Label = styled.label<LabelProps>`
   top: 0.5em;
   left: calc(0.625em + 3px);
   z-index: 1;
-  font-family: Pridi;
+  font-family: Athiti;
   font-style: normal;
   font-weight: normal;
   line-height: normal;
@@ -81,14 +81,14 @@ const ErrorMessage = styled.div`
   font-weight: 600;
 
   pointer-events: none;
-`;
+`
 
 interface FieldWrapperProps {
-  label?: string;
-  input?: any;
-  meta?: any;
-  float?: boolean;
-  wordy?: boolean;
+  label?: string
+  input?: any
+  meta?: any
+  float?: boolean
+  wordy?: boolean
 }
 
 const wrap = (Component: React.ComponentType) => ({
@@ -108,22 +108,22 @@ const wrap = (Component: React.ComponentType) => ({
 
     {meta.touched && meta.error && <ErrorMessage>{meta.error}</ErrorMessage>}
   </Container>
-);
+)
 
 const withField = Component => {
-  const InputField = wrap(Component);
+  const InputField = wrap(Component)
 
   return (
     props: BaseFieldProps &
       FieldWrapperProps & {
-        name: keyof Fields;
-        type?: "email" | "text" | "number";
-        placeholder?: string;
-        direction?: "row" | "column";
+        name: keyof Fields
+        type?: 'email' | 'text' | 'number'
+        placeholder?: string
+        direction?: 'row' | 'column'
       }
   ) => {
-    return <Field<{}> component={InputField as any} {...props} />;
-  };
-};
+    return <Field<{}> component={InputField as any} {...props} />
+  }
+}
 
-export default withField;
+export default withField
