@@ -85,6 +85,7 @@
     "@types/webpack-env": "^1.13.6",
     "babel-plugin-import": "^1.11.0",
     "eslint-config-react-tools": "1.x.x",
+    "firebase-tools": "^6.5.0",
     "react-static-plugin-typescript": "^3.0.1",
     "serve": "10.1.1",
     "terser-webpack-plugin": "^1.2.1",
