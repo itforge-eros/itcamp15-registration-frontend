@@ -1,31 +1,31 @@
-import React from "react";
-import { connect } from "react-redux";
-import styled from "@emotion/styled";
-import { withRouteData } from "react-static";
+import React from 'react'
+import {connect} from 'react-redux'
+import styled from '@emotion/styled'
+import {withRouteData} from 'react-static'
 
-import { Backdrop } from "../components/Layout";
-import MajorForm from "../components/MajorForm";
+import {Backdrop} from '../components/Layout'
+import MajorForm from '../components/MajorForm'
 
-import { save, markNext } from "../ducks/submission";
-import Title from "../components/Title";
-import Stepper from "../components/Stepper";
-import NavBar from "../components/NavBar";
+import {save, markNext} from '../ducks/submission'
+import Title from '../components/Title'
+import Stepper from '../components/Stepper'
+import NavBar from '../components/NavBar'
 
-const StepOne = ({ questions, save, markNext }) => (
+const StepOne = ({questions, save, markNext}) => (
   <Backdrop>
     <NavBar />
     <Title>คำถามสาขา</Title>
     <Stepper
-      currentStep={"คำถามสาขา"}
-      steps={["ข้อมูลนักเวทย์", "ข้อมูลเพิ่มเติม", "คำถามกลาง", "คำถามสาขา"]}
+      currentStep={'คำถามค่าย'}
+      steps={['ข้อมูลนักเวทย์', 'ข้อมูลเพิ่มเติม', 'คำถามกลาง', 'คำถามค่าย']}
     />
-    <MajorForm onSubmit={save} next={markNext} questions={questions}/>
+    <MajorForm onSubmit={save} next={markNext} questions={questions} />
   </Backdrop>
-);
+)
 
 const enhance = connect(
   null,
-  { save, markNext }
-);
+  {save, markNext}
+)
 
-export default enhance(StepOne);
+export default enhance(StepOne)

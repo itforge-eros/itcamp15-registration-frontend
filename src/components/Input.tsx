@@ -1,12 +1,12 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled'
 
-import { css } from "@emotion/core";
+import {css} from '@emotion/core'
 
-import withField from "./withField";
+import withField from './withField'
 
 interface IMeta {
-  touched: boolean;
-  error: boolean;
+  touched: boolean
+  error: boolean
 }
 // prettier-ignore
 export const TextInput = styled.input<{meta: IMeta}>`
@@ -30,7 +30,7 @@ export const TextInput = styled.input<{meta: IMeta}>`
   }
 
   &::placeholder {
-    font-family: Pridi;
+    font-family: Athiti;
     font-style: normal;
     font-weight: 100;
     line-height: normal;
@@ -42,7 +42,7 @@ export const TextInput = styled.input<{meta: IMeta}>`
   &:hover:enabled {
     // box-shadow: 0 3px 18.5px 2px #F1E9FF;
     border-bottom: 2px rgb(250, 185, 97) solid;
-  },
+  }
   &:active:enabled {
     // transform: scale(1.005);
     // box-shadow: 0 3px 18.5px 2px rgba(0, 0, 0, 0.18);
@@ -55,7 +55,7 @@ export const TextInput = styled.input<{meta: IMeta}>`
 
   &:disabled {
     border: none;
-    background: #f5f5f5; 
+    background: #f5f5f5;
   }
 
   ${props => props.meta.touched && props.meta.error && css`
@@ -63,4 +63,4 @@ export const TextInput = styled.input<{meta: IMeta}>`
   `};
 `
 
-export default withField(TextInput);
+export default withField(TextInput)

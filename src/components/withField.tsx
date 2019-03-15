@@ -100,9 +100,12 @@ const wrap = (Component: React.ComponentType) => ({
   ...props
 }: FieldWrapperProps) => (
   <Container wordy={wordy}>
-    <Label float={input.value || float} wordy={wordy} meta={meta}>
-      {label}
-    </Label>
+    <Label
+      float={input.value || float}
+      wordy={wordy}
+      meta={meta}
+      dangerouslySetInnerHTML={{__html: label}}
+    />
 
     <Component meta={meta} {...props} {...input} />
 
