@@ -1,15 +1,15 @@
-import React from "react";
-import Ink from "react-ink";
-import styled from "@emotion/styled";
+import React from 'react'
+import Ink from 'react-ink'
+import styled from '@emotion/styled'
 
-import { css } from "@emotion/core";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {css} from '@emotion/core'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 
 interface ButtonContainerProps {
-  success?: boolean;
-  disabled?: boolean;
-  fancy?: boolean;
-  color?: string;
+  success?: boolean
+  disabled?: boolean
+  fancy?: boolean
+  color?: string
 }
 
 // prettier-ignore
@@ -24,14 +24,13 @@ const ButtonContainer = styled.button`
   color: #efefef;
   cursor: pointer;
   appearance: none;
-  // margin-left: 1em;
   align-self: center;
   border-radius: 9999px;
-  background: ${props => props.color || '#E1A34E'};
+  background: ${props => props.color || '#f9ba47'};
   box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
-  
+
   outline: none;
-  padding: 0.5em 3em;
+  padding: 0.2em 3em;
   position: relative;
   text-align: center;
   text-decoration: none;
@@ -73,33 +72,33 @@ const ButtonContainer = styled.button`
 `
 
 type ButtonProps = {
-  children: any;
-  type?: string;
-  onClick?: () => any;
-  arrow?: "left" | "right";
-} & ButtonContainerProps;
+  children: any
+  type?: string
+  onClick?: () => any
+  arrow?: 'left' | 'right'
+} & ButtonContainerProps
 
-const Button = ({ children, onClick, arrow, ...props }: ButtonProps) => {
+const Button = ({children, onClick, arrow, ...props}: ButtonProps) => {
   const arrowIcon = arrow ? (
     <FontAwesomeIcon
-      icon={arrow === "left" ? "angle-left" : "angle-right"}
+      icon={arrow === 'left' ? 'angle-left' : 'angle-right'}
       style={{
-        color: "white",
-        top: "50%",
-        transform: "translateY(-50%)",
-        right: arrow === "right" ? "16px" : undefined,
-        left: arrow === "left" ? "16px" : undefined,
-        position: "absolute"
+        color: 'white',
+        top: '50%',
+        transform: 'translateY(-50%)',
+        right: arrow === 'right' ? '16px' : undefined,
+        left: arrow === 'left' ? '16px' : undefined,
+        position: 'absolute'
       }}
     />
-  ) : null;
+  ) : null
   return (
     <ButtonContainer {...props} onClick={onClick}>
       {children}
       <Ink />
       {arrowIcon}
     </ButtonContainer>
-  );
-};
+  )
+}
 
-export default Button;
+export default Button

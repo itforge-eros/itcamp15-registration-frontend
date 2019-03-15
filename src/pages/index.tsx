@@ -4,9 +4,9 @@ import {Backdrop, HeadingFrame} from '../components/Layout'
 import CharacterSelector from '../components/CharacterSelector'
 
 const Heading = styled.h1`
-  font-size: 2.8em;
+  font-size: 2.4em;
   font-weight: 300;
-  margin-bottom: 0.3em;
+  margin-bottom: 0em;
   text-align: center;
   color: white;
 `

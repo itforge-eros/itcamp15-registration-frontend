@@ -266,7 +266,7 @@ const MajorSection = ({data}) => {
   if (!major) {
     return (
       <Section>
-        <Title>คำถามสาขา</Title>
+        <Title>คำถามค่าย</Title>
 
         <Item>กรุณารอสักครู่</Item>
       </Section>
@@ -281,7 +281,7 @@ const MajorSection = ({data}) => {
 
   return (
     <Section>
-      <Title>คำถามสาขา</Title>
+      <Title>คำถามค่าย</Title>
       {/* <Item>
         <Question>{Q1}</Question>
 

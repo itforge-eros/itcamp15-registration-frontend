@@ -14,10 +14,10 @@ import NavBar from '../components/NavBar'
 const StepOne = ({questions, save, markNext}) => (
   <Backdrop>
     <NavBar />
-    <Title>คำถามสาขา</Title>
+    <Title>คำถามค่าย</Title>
     <Stepper
       currentStep={'คำถามค่าย'}
-      steps={['ข้อมูลนักเวทย์', 'ข้อมูลเพิ่มเติม', 'คำถามกลาง', 'คำถามค่าย']}
+      steps={['ข้อมูลส่วนตัว', 'ข้อมูลเพิ่มเติม', 'คำถามกลาง', 'คำถามค่าย']}
     />
     <MajorForm onSubmit={save} next={markNext} questions={questions} />
   </Backdrop>

@@ -194,7 +194,7 @@ export default props => {
             {...swipeHandler}
           />
           <Description>
-            Web {selector[0].toUpperCase() + selector.substr(1)}
+            {selector[0].toUpperCase() + selector.substr(1)}
           </Description>
 
           {/* GET image into memory to make smooth image transition */}
@@ -220,7 +220,7 @@ export default props => {
     return (
       <Container>
         {isMobile ? MobileContent : DesktopContent}
-        <Button onClick={() => confirm()}>ยืนยันสาขา</Button>
+        <Button onClick={() => confirm()}>ยืนยันค่าย</Button>
         <Modal
           field={field}
           toggle={toggle}

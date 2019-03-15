@@ -19,7 +19,7 @@ const StepOne = ({save, markNext, clearMajor}) => {
       <Title>ข้อมูลเพิ่มเติม</Title>
       <Stepper
         currentStep={'ข้อมูลเพิ่มเติม'}
-        steps={['ข้อมูลนักเวทย์', 'ข้อมูลเพิ่มเติม', 'คำถามกลาง', 'คำถามค่าย']}
+        steps={['ข้อมูลส่วนตัว', 'ข้อมูลเพิ่มเติม', 'คำถามกลาง', 'คำถามค่าย']}
       />
       <ParentalForm onSubmit={save} next={markNext} />
     </Backdrop>

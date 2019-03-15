@@ -15,10 +15,10 @@ const StepOne = ({save, markNext}) => (
   <Backdrop>
     <NavBar />
     <Stepper
-      currentStep={'ข้อมูลนักเวทย์'}
-      steps={['ข้อมูลนักเวทย์', 'ข้อมูลเพิ่มเติม', 'คำถามกลาง', 'คำถามค่าย']}
+      currentStep={'ข้อมูลส่วนตัว'}
+      steps={['ข้อมูลส่วนตัว', 'ข้อมูลเพิ่มเติม', 'คำถามกลาง', 'คำถามค่าย']}
     />
-    <Title>ข้อมูลนักเวทย์</Title>
+    <Title>ข้อมูลส่วนตัว</Title>
     <PersonalForm onSubmit={save} next={markNext} />
   </Backdrop>
 )

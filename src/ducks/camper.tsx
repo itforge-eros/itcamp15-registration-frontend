@@ -27,8 +27,8 @@ export const storeCamper = Creator(STORE_CAMPER);
 
 const LoadingMessage = `กำลังดึงข้อมูลการสมัครเข้าค่าย กรุณารอสักครู่...`;
 const MajorRedirectLog = `User has chosen a major before. Redirecting to:`;
-const MajorRedirectMessage = `กำลังเปลี่ยนหน้าไปที่แบบฟอร์มสมัครเข้าสาขา `;
-const ChangeDeniedMessage = `คุณได้เลือกสาขาอื่นไปแล้ว`;
+const MajorRedirectMessage = `กำลังเปลี่ยนหน้าไปที่แบบฟอร์มสมัครเข้าค่าย `;
+const ChangeDeniedMessage = `คุณได้เลือกค่ายอื่นไปแล้ว`;
 
 // Check if user is at major root, e.g. /:major
 function isMajorRoot(major: string) {
@@ -95,7 +95,7 @@ function notifySubmitted(camper: Camper) {
     content: (
       <div style={{ fontSize: "1.65em" }}>
         <p>
-          คุณ {name} ได้ยืนยันการสมัครค่าย Junior Webmaster Camp ในสาขา{" "}
+          คุณ {name} ได้ยืนยันการสมัครค่าย Junior Webmaster Camp ในค่าย{" "}
           {camper.major} ไปเรียบร้อยแล้ว
         </p>
         <p>

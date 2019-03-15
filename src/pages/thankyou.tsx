@@ -11,7 +11,7 @@ const Logo = styled.img`
 `
 
 const ConfirmText = styled.label`
-  color: #e1a34e;
+  color: #f9ba47;
   display: flex;
   align-items: center;
   font-size: 3em;

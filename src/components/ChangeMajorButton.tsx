@@ -1,32 +1,32 @@
-import { connect } from "react-redux";
-import { clearMajor } from "../ducks/submission";
-import TransparentButton from "./TransparentButton";
-import { Fragment, useState } from "react";
-import Modal from "./Modal";
-import { getMajorFromPath } from "../core/util";
+import {connect} from 'react-redux'
+import {clearMajor} from '../ducks/submission'
+import TransparentButton from './TransparentButton'
+import {Fragment, useState} from 'react'
+import Modal from './Modal'
+import {getMajorFromPath} from '../core/util'
 
 interface ChangeMajorButtonProps {
-  field?: string;
-  clearMajor?: () => void;
+  field?: string
+  clearMajor?: () => void
 }
 
 export default connect(
   null,
-  { clearMajor }
+  {clearMajor}
 )((props: ChangeMajorButtonProps) => {
-  if (typeof window !== "undefined") {
-    const { clearMajor, field } = props;
-    const [toggle, setIsToggle] = useState<boolean>(false);
+  if (typeof window !== 'undefined') {
+    const {clearMajor, field} = props
+    const [toggle, setIsToggle] = useState<boolean>(false)
     const confirm = () => {
-      setIsToggle(!toggle);
-    };
+      setIsToggle(!toggle)
+    }
     return (
       <Fragment>
         <Modal
           text={[
-            "คำตอบทั้งหมดที่น้องกรอกในหน้า",
-            `"ยืนยันสาขา"`,
-            "จะถูกลบทั้งหมด น้องยืนยันจะเปลี่ยนสาขาไหม?"
+            'คำตอบทั้งหมดที่น้องกรอกในหน้า',
+            `"ยืนยันค่าย"`,
+            'จะถูกลบทั้งหมด น้องยืนยันจะเปลี่ยนค่ายไหม?'
           ]}
           field={field || getMajorFromPath()}
           toggle={toggle}
@@ -34,11 +34,11 @@ export default connect(
           confirm={clearMajor}
         />
         <TransparentButton color="white" onClick={confirm} type="button">
-          เปลี่ยนสาขา
+          เปลี่ยนค่าย
         </TransparentButton>
       </Fragment>
-    );
+    )
   } else {
-    return null;
+    return null
   }
-});
+})

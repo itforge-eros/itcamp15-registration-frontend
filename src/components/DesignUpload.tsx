@@ -219,7 +219,7 @@ class Upload extends Component<UploadProps, UploadState> {
       }
 
       hide();
-      message.success("อัพโหลดรูปสำหรับสาขาดีไซน์เรียบร้อยแล้ว");
+      message.success("อัพโหลดรูปสำหรับค่ายดีไซน์เรียบร้อยแล้ว");
     } catch (err) {
       hide();
       message.error(err.message);
