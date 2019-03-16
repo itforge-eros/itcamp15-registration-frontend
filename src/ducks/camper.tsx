@@ -144,7 +144,17 @@ export function* loadCamperSaga() {
 
     if (doc.exists) {
       // If the camper's record does exist:
-      const record = doc.data()
+      let record = doc.data()
+
+      if (!record.major) {
+        yield call(rsf.firestore.setDocument as any, docRef, {
+          ...record,
+          major: getMajorFromPath()
+        })
+      }
+
+      record.major = record.major === '' ? getMajorFromPath() : record.major
+
       logger.log('Retrieved Camper Record:', record)
 
       // Store the camper's submission record into the redux store
