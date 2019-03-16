@@ -48,8 +48,8 @@ const ThankYou = () => (
         <Correct src="/images/correct.svg" />
         &nbsp;ส่งใบสมัครเรียบร้อย
       </ConfirmText>
-      <Text>ประกาศผลวันที่ 24 มีนาคม 2562</Text>
-      <Text>โชคดีนะน้อง</Text>
+      <Text>ประกาศผลวันที่ 28 เมษายน 2562</Text>
+      <Text>แล้วเจอกันในค่ายนะ</Text>
       <ButtonContainer>
         <Button onClick={backHandler}>กลับสู่หน้าหลัก</Button>
       </ButtonContainer>

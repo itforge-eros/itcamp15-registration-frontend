@@ -37,7 +37,7 @@ export const setAuthenticating = Creator(SET_AUTHENTICATING)
 export const reAuth = Creator(RE_AUTH)
 
 // The epoch timestamp in which the registration system will be closed
-const SUBMISSION_CLOSED_TIME = new Date('Apr 15 2020 01:00:00').getTime()
+const SUBMISSION_CLOSED_TIME = new Date('Apr 17 2019 00:00:00').getTime()
 
 // Serializes the user's information into an object
 const userProps = R.pick([
@@ -55,7 +55,7 @@ function notifySubmissionClosed() {
       <div style={{fontSize: '1.65em'}}>
         <p>ช่วงเวลารับสมัครของค่าย ITCAMP 15 ได้จบลงแล้วค่ะ 🙌</p>
         <p>
-          ค่ายจะประกาศผลการคัดเลือกในวันที่ 24 มีนาคม ผ่านทางเว็บไซต์{' '}
+          ค่ายจะประกาศผลการคัดเลือกในวันที่ 28 เมษายน ผ่านทางเว็บไซต์{' '}
           <a href={MAIN_PAGE}>{MAIN_PAGE}</a> ค่ะ
         </p>
         {/* <p>ขอให้โชคดีนะคะ ให้คุกกี้ทำนายกัน! 🥠</p> */}

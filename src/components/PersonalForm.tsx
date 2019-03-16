@@ -49,8 +49,7 @@ export const grades = {
 
 export const genders = {
   male: 'ชาย',
-  female: 'หญิง',
-  other: 'เพศอื่นๆ'
+  female: 'หญิง'
 }
 
 export const shirtSizes = {

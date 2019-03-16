@@ -16,6 +16,14 @@ const Major = styled.span`
   text-transform: capitalize;
 `
 
+enum Camps {
+  app = 'Appermort',
+  game = 'GrindelGame',
+  data = 'Dragota',
+  iot = 'Dobby of Things',
+  network = 'Netherine'
+}
+
 const Splash = ({children}) => (
   <Backdrop>
     <Container>
@@ -40,14 +48,14 @@ const Splash = ({children}) => (
 const Authenticating = () => (
   <Splash>
     กรุณาเข้าสู่ระบบด้วย Facebook เพื่อสมัครเข้าค่าย
-    <Major> {getMajorFromPath()}</Major>
+    <Major> {Camps[getMajorFromPath()]}</Major>
   </Splash>
 )
 
 const Loading = () => (
   <Splash>
     กำลังยืนยันตัวตนเพื่อสมัครเข้าค่าย
-    <Major> {getMajorFromPath()} </Major>
+    <Major> {Camps[getMajorFromPath()]} </Major>
     กรุณารอสักครู่
   </Splash>
 )
