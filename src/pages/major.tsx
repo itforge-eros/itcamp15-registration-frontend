@@ -20,7 +20,14 @@ const Splash = ({children}) => (
   <Backdrop>
     <Container>
       <Paper>
-        <Heading style={{margin: 0, marginBottom: '1.5em', marginTop: '1.5em', color: 'black'}}>
+        <Heading
+          style={{
+            margin: 0,
+            marginBottom: '1.5em',
+            marginTop: '1.5em',
+            color: 'black'
+          }}
+        >
           {children}
         </Heading>
 
@@ -30,14 +37,14 @@ const Splash = ({children}) => (
   </Backdrop>
 )
 
-const Authenticating = props => (
+const Authenticating = () => (
   <Splash>
     กรุณาเข้าสู่ระบบด้วย Facebook เพื่อสมัครเข้าค่าย
     <Major> {getMajorFromPath()}</Major>
   </Splash>
 )
 
-const Loading = props => (
+const Loading = () => (
   <Splash>
     กำลังยืนยันตัวตนเพื่อสมัครเข้าค่าย
     <Major> {getMajorFromPath()} </Major>

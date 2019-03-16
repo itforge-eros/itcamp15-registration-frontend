@@ -1,22 +1,22 @@
-import React from "react";
+import React from 'react'
 
-import { FormContainer, Paper, Row } from "./Layout";
-import Button from "./Button";
-import Input from "./Input";
-import Select from "./Select";
+import {FormContainer, Paper, Row} from './Layout'
+import Button from './Button'
+import Input from './Input'
+import Select from './Select'
 
-import withWizard from "../core/form";
-import { prev } from "../core/step";
+import withWizard from '../core/form'
+import {prev} from '../core/step'
 
-import styled from "@emotion/styled";
-import TextArea from "./TextArea";
-import ChangeMajorButton from "./ChangeMajorButton";
-import TransparentButton from "./TransparentButton";
+import styled from '@emotion/styled'
+import TextArea from './TextArea'
+import ChangeMajorButton from './ChangeMajorButton'
+import TransparentButton from './TransparentButton'
 
 const Col = styled.div`
   padding: 0px 0.5em;
   width: 100%;
-`;
+`
 
 const ButtonGroup = styled.div`
   display: grid;
@@ -27,10 +27,10 @@ const ButtonGroup = styled.div`
   @media screen and (max-width: 400px) {
     font-size: 0.8em;
   }
-`;
+`
 
 const Underline = styled.div`
-  content: "";
+  content: '';
   width: 100%;
   height: 1px;
   margin-top: 1em;
@@ -38,23 +38,23 @@ const Underline = styled.div`
   bottom: 0;
   left: 0;
   background-color: #e0e0e0;
-`;
-const toOptions = i => ({ value: i, label: i });
+`
+const toOptions = i => ({value: i, label: i})
 
 const Options = options =>
-  Object.entries(options).map(([value, label]) => ({ value, label }));
+  Object.entries(options).map(([value, label]) => ({value, label}))
 
 export const shirtSizes = {
-  XS: "XS (รอบอก 31 นิ้ว ความยาว 25 นิ้ว)",
-  S: "S (รอบอก 36 นิ้ว ความยาว 28 นิ้ว)",
-  M: "M (รอบอก 38 นิ้ว ความยาว 28.5 นิ้ว)",
-  L: "L (รอบอก 42 นิ้ว ความยาว 30 นิ้ว)",
-  XL: "XL (รอบอก 44 นิ้ว ความยาว 30.5 นิ้ว)",
-  XXL: "XXL (รอบอก 48 นิ้ว ความยาว 32 นิ้ว)"
-};
-const shirtSizeOptions = Options(shirtSizes);
+  S: 'S (รอบอก 33 นิ้ว ความยาว 25 นิ้ว)',
+  M: 'M (รอบอก 36 นิ้ว ความยาว 27 นิ้ว)',
+  L: 'L (รอบอก 40 นิ้ว ความยาว 29 นิ้ว)',
+  XL: 'XL (รอบอก 44 นิ้ว ความยาว 30 นิ้ว)',
+  XXL: 'XXL (รอบอก 48 นิ้ว ความยาว 31 นิ้ว)',
+  XXXL: '3XL (รอบอก 52 นิ้ว ความยาว 32 นิ้ว)'
+}
+const shirtSizeOptions = Options(shirtSizes)
 
-const ParentalForm = ({ next, handleSubmit }) => (
+const ParentalForm = ({next, handleSubmit}) => (
   <FormContainer onSubmit={handleSubmit}>
     <Paper>
       <Row>
@@ -132,12 +132,12 @@ const ParentalForm = ({ next, handleSubmit }) => (
       </Row>
     </Paper>
 
-    <Row style={{ marginBottom: "2em" }}>
+    <Row style={{marginBottom: '2em'}}>
       <ButtonGroup>
         <TransparentButton
           arrow="left"
           onClick={prev}
-          style={{ marginRight: "0.8em" }}
+          style={{marginRight: '0.8em'}}
           type="button"
         >
           ก่อนหน้า
@@ -147,16 +147,16 @@ const ParentalForm = ({ next, handleSubmit }) => (
           onClick={next}
           type="submit"
           arrow="right"
-          style={{ marginLeft: "0.8em" }}
+          style={{marginLeft: '0.8em'}}
         >
           ถัดไป
         </Button>
       </ButtonGroup>
     </Row>
-    <Row style={{ marginBottom: "2.8em" }}>
+    <Row style={{marginBottom: '2.8em'}}>
       <ChangeMajorButton />
     </Row>
   </FormContainer>
-);
+)
 
-export default withWizard(ParentalForm);
+export default withWizard(ParentalForm)

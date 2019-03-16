@@ -101,7 +101,7 @@ export default props => {
           <CharacterCard
             active={selector === 'app'}
             onClick={() => setSelector('app')}
-            src="/images/content.png"
+            src="/images/app.png"
           />
           <Description>{Character.app}</Description>
         </Card>
@@ -109,7 +109,7 @@ export default props => {
           <CharacterCard
             active={selector === 'network'}
             onClick={() => setSelector('network')}
-            src="/images/content.png"
+            src="/images/network.png"
           />
           <Description>{Character.network}</Description>
         </Card>
@@ -117,7 +117,7 @@ export default props => {
           <CharacterCard
             active={selector === 'data'}
             onClick={() => setSelector('data')}
-            src="/images/content.png"
+            src="/images/data.png"
           />
           <Description>{Character.data}</Description>
         </Card>
@@ -125,7 +125,7 @@ export default props => {
           <CharacterCard
             active={selector === 'game'}
             onClick={() => setSelector('game')}
-            src="/images/content.png"
+            src="/images/game.png"
           />
           <Description>{Character.game}</Description>
         </Card>
@@ -133,20 +133,13 @@ export default props => {
           <CharacterCard
             active={selector === 'iot'}
             onClick={() => setSelector('iot')}
-            src="/images/content.png"
+            src="/images/iot.png"
           />
           <Description>{Character.iot}</Description>
         </Card>
       </Row>
     )
     const move = (direction: 'left' | 'right') => {
-      const majors = [
-        Character.app,
-        Character.game,
-        Character.data,
-        Character.iot,
-        Character.network
-      ]
       if (direction === 'left') {
         setSelector(
           majors[
@@ -193,9 +186,7 @@ export default props => {
             src={`/images/${selector}.png`}
             {...swipeHandler}
           />
-          <Description>
-            {selector[0].toUpperCase() + selector.substr(1)}
-          </Description>
+          <Description>{Character[selector]}</Description>
 
           {/* GET image into memory to make smooth image transition */}
           {majors.map((major, i) => (
@@ -217,6 +208,7 @@ export default props => {
         </div>
       </Row>
     )
+
     return (
       <Container>
         {isMobile ? MobileContent : DesktopContent}

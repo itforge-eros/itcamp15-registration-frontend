@@ -4,6 +4,7 @@ import {message, Modal} from 'antd'
 import * as firebase from 'firebase/app'
 import {takeEvery, call, put, fork} from 'redux-saga/effects'
 import {captureException} from '@sentry/browser'
+import {navigate} from '@reach/router'
 
 import 'firebase/auth'
 
@@ -113,6 +114,9 @@ export function* logoutSaga() {
   try {
     yield call(rsf.auth.signOut)
     yield put(clearUser())
+    logger.log('Logged out~!')
+    message.success('ออกจากระบบเรียบร้อยแล้ว')
+    navigate('/')
   } catch (err) {
     message.error(err.message)
   }

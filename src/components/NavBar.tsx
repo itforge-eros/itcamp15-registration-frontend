@@ -1,5 +1,8 @@
 import styled from '@emotion/styled'
 import {getMajorFromPath} from '../core/util'
+import {connect} from 'react-redux'
+import {compose} from 'recompose'
+import {logout} from '../ducks/user'
 
 const Nav = styled.nav`
   width: 100%;
@@ -11,13 +14,20 @@ const Nav = styled.nav`
   color: white;
   font-size: 2em;
   margin-bottom: 1em;
+
   @media screen and (max-width: 780px) {
     font-size: 1.6em;
   }
 `
+const LogoutButton = styled.span`
+  text-decoration: underline;
+  cursor: pointer;
+`
 
-export default () => {
+const NavBar = props => {
   const major = getMajorFromPath()
+
+  const {logout} = props
 
   enum Camps {
     app = 'Appermort',
@@ -29,8 +39,17 @@ export default () => {
 
   return (
     <Nav>
-      <span>Logout</span>
+      <LogoutButton onClick={() => logout()}>Logout</LogoutButton>
       <span>ค่าย {major ? Camps[major] : ''}</span>
     </Nav>
   )
 }
+
+const enhance = compose(
+  connect(
+    () => ({}),
+    {logout}
+  )
+)
+
+export default enhance(NavBar)

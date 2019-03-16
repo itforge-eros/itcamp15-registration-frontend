@@ -90,12 +90,12 @@ export function Document(props) {
 
         <meta
           itemProp="description"
-          content="พบกันเร็วๆ นี้ กับค่าย ITCAMP 15"
+          content="สมัครเข้าค่าย ITCAMP 15 ได้แล้ววันนี้"
         />
 
         <meta
           itemProp="image"
-          content="https://registration.jwc.in.th/images/og01031423.jpg"
+          content="https://register.itcamp.in.th/images/og.jpg"
         />
 
         <meta name="twitter:card" content="summary" />
@@ -104,7 +104,7 @@ export function Document(props) {
 
         <meta
           name="twitter:description"
-          content="พบกันเร็วๆ นี้ กับค่าย ITCAMP 15"
+          content="สมัครเข้าค่าย ITCAMP 15 ได้แล้ววันนี้"
         />
 
         <meta name="twitter:site" content="@itcamp" />
@@ -112,19 +112,19 @@ export function Document(props) {
 
         <meta
           name="twitter:image:src"
-          content="https://registration.jwc.in.th/images/og01031423.jpg"
+          content="https://register.itcamp.in.th/images/og.jpg"
         />
 
         <meta property="og:title" content="สมัครเข้าค่าย ITCAMP 15" />
 
         <meta
           property="og:description"
-          content="พบกันเร็วๆ นี้ กับค่าย ITCAMP 15"
+          content="สมัครเข้าค่าย ITCAMP 15 ได้แล้ววันนี้"
         />
 
         <meta
           property="og:image"
-          content="https://registration.jwc.in.th/images/og01031423.jpg"
+          content="https://register.itcamp.in.th/images/og.jpg"
         />
         <meta property="og:url" content="https://register.itcamp.in.th/" />
         <meta property="og:site_name" content="ITCAMP 15" />

@@ -1,20 +1,20 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import styled from "@emotion/styled";
-import { captureException } from "@sentry/browser";
-import { Icon } from "antd";
+import React, {Component} from 'react'
+import {connect} from 'react-redux'
+import styled from '@emotion/styled'
+import {captureException} from '@sentry/browser'
+import {Icon} from 'antd'
 
-import { css } from "@emotion/core";
+import {css} from '@emotion/core'
 
-import ReactDropzone from "react-dropzone";
-import { message } from "antd";
-import * as firebase from "firebase/app";
-import Ink from "react-ink";
+import ReactDropzone from 'react-dropzone'
+import {message} from 'antd'
+import * as firebase from 'firebase/app'
+import Ink from 'react-ink'
 
-import withField from "../components/withField";
+import withField from '../components/withField'
 
-import logger from "../core/log";
-import { UploadProps, UploadState } from "./Upload";
+import logger from '../core/log'
+import {UploadProps, UploadState} from './Upload'
 
 const dropIconStyle = css`
   color: #555;
@@ -25,14 +25,14 @@ const dropIconStyle = css`
   padding: 0.5em;
   border: 1px solid #555;
   border-radius: 50%;
-`;
+`
 interface DropZoneProps {
-  disabled?: boolean;
-  preview?: string;
+  disabled?: boolean
+  preview?: string
   meta?: {
-    error?: boolean;
-    touched?: boolean;
-  };
+    error?: boolean
+    touched?: boolean
+  }
 }
 
 // prettier-ignore
@@ -102,7 +102,7 @@ const DropTitle = styled.div`
 `
 
 interface OverlayProps {
-  active: boolean;
+  active: boolean
 }
 
 // prettier-ignore
@@ -130,107 +130,107 @@ const DropWarning = styled.div`
   color: #ee5253;
   text-align: center;
   font-size: 1.2em;
-`;
+`
 
 class Upload extends Component<UploadProps, UploadState> {
-  state: UploadState = {};
+  state: UploadState = {}
 
   async componentDidMount() {
     if (this.props.uid) {
-      await this.loadPreview(this.props.uid);
+      await this.loadPreview(this.props.uid)
     }
   }
 
   async UNSAFE_componentWillReceiveProps(props: UploadProps) {
     if (this.props.uid !== props.uid) {
-      const { uid } = props;
+      const {uid} = props
 
-      await this.loadPreview(uid);
+      await this.loadPreview(uid)
     }
   }
 
   loadPreview = async (uid: number) => {
-    const storage = firebase.storage().ref();
-    const designs = storage.child(`designs/${uid}.jpg`);
+    const storage = firebase.storage().ref()
+    const designs = storage.child(`designs/${uid}.jpg`)
 
     try {
-      const url = await designs.getDownloadURL();
+      const url = await designs.getDownloadURL()
 
       if (url) {
-        logger.log("Design URL", url);
+        logger.log('Design URL', url)
 
-        this.setState({ preview: url });
+        this.setState({preview: url})
 
         if (this.props.input) {
-          this.props.input.onChange(url);
+          this.props.input.onChange(url)
         }
       }
     } catch (err) {
-      if (err.code === "storage/object-not-found") {
-        logger.info("Camper", uid, "has not uploaded their designs yet.");
-        return;
+      if (err.code === 'storage/object-not-found') {
+        logger.info('Camper', uid, 'has not uploaded their designs yet.')
+        return
       }
 
-      logger.warn(err.message);
+      logger.warn(err.message)
 
-      captureException(err);
+      captureException(err)
     }
-  };
+  }
 
   onDrop = async (acceptedFiles: File[], rejectedFiles: File[]) => {
-    const hide = message.loading("กำลังอัพโหลดรูปดีไซน์ กรุณารอสักครู่...", 0);
+    const hide = message.loading('กำลังอัพโหลดรูปดีไซน์ กรุณารอสักครู่...', 0)
 
     if (rejectedFiles.length > 0) {
-      logger.warn("Rejected Files:", rejectedFiles);
+      logger.warn('Rejected Files:', rejectedFiles)
 
-      hide();
-      message.error("รูปดีไซน์ต้องมีขนาดน้อยกว่า 10MB และเป็นไฟล์รูปเท่านั้น");
-      return;
+      hide()
+      message.error('รูปดีไซน์ต้องมีขนาดน้อยกว่า 10MB และเป็นไฟล์รูปเท่านั้น')
+      return
     }
 
     try {
-      const { uid, onChange } = this.props;
+      const {uid, onChange} = this.props
 
       if (!uid) {
-        hide();
-        message.error("ไม่พบผู้ใช้นี้อยู่ในระบบ ไม่สามารถอัพโหลดรูปภาพได้", 0);
+        hide()
+        message.error('ไม่พบผู้ใช้นี้อยู่ในระบบ ไม่สามารถอัพโหลดรูปภาพได้', 0)
 
-        return;
+        return
       }
 
-      const storage = firebase.storage().ref();
-      const designs = storage.child(`designs/${uid}.jpg`);
+      const storage = firebase.storage().ref()
+      const designs = storage.child(`designs/${uid}.jpg`)
 
-      const [file] = acceptedFiles;
+      const [file] = acceptedFiles
 
-      this.setState({ preview: URL.createObjectURL(file) });
+      this.setState({preview: URL.createObjectURL(file)})
 
       if (onChange) {
-        onChange(true);
+        onChange(true)
       }
 
-      const snapshot = await designs.put(file);
+      const snapshot = await designs.put(file)
 
-      logger.log("Design Photo File:", file);
-      logger.log("Uploaded Design Photo:", snapshot);
+      logger.log('Design Photo File:', file)
+      logger.log('Uploaded Design Photo:', snapshot)
 
       if (onChange) {
-        onChange(snapshot.downloadURL);
+        onChange(snapshot.downloadURL)
       }
 
-      hide();
-      message.success("อัพโหลดรูปสำหรับค่ายดีไซน์เรียบร้อยแล้ว");
+      hide()
+      message.success('อัพโหลดรูปสำหรับค่ายดีไซน์เรียบร้อยแล้ว')
     } catch (err) {
-      hide();
-      message.error(err.message);
+      hide()
+      message.error(err.message)
 
-      captureException(err);
+      captureException(err)
     }
-  };
+  }
 
   render() {
-    const { preview } = this.state;
-    const { meta, disabled } = this.props;
+    const {preview} = this.state
+    const {meta, disabled} = this.props
 
     return (
       <ReactDropzone
@@ -240,7 +240,7 @@ class Upload extends Component<UploadProps, UploadState> {
         multiple={false}
         accept="image/*"
       >
-        {({ getRootProps, getInputProps, isDragActive }) => (
+        {({getRootProps, getInputProps, isDragActive}) => (
           <DropZoneContainer
             {...getRootProps()}
             preview={preview}
@@ -265,16 +265,16 @@ class Upload extends Component<UploadProps, UploadState> {
           </DropZoneContainer>
         )}
       </ReactDropzone>
-    );
+    )
   }
 }
 
 const mapStateToProps = (state: any) => ({
   uid: state.user.uid
-});
+})
 
-const enhance = connect(mapStateToProps);
+const enhance = connect(mapStateToProps)
 
-export const DesignUpload = enhance(Upload);
+export const DesignUpload = enhance(Upload)
 
-export default withField(DesignUpload);
+export default withField(DesignUpload)

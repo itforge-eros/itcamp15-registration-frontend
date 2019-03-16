@@ -43,6 +43,7 @@ export const TextInput = styled.input<{meta: IMeta}>`
     // box-shadow: 0 3px 18.5px 2px #F1E9FF;
     border-bottom: 2px rgb(250, 185, 97) solid;
   }
+
   &:active:enabled {
     // transform: scale(1.005);
     // box-shadow: 0 3px 18.5px 2px rgba(0, 0, 0, 0.18);
