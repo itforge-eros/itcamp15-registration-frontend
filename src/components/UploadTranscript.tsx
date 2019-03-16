@@ -178,7 +178,7 @@ class Upload extends Component<UploadProps, UploadState> {
   }
 
   onDrop = async (acceptedFiles: File[], rejectedFiles: File[]) => {
-    const hide = message.loading('กำลังอัพโหลดรูปประจำตัว กรุณารอสักครู่...', 0)
+    const hide = message.loading('กำลังอัพโหลดใบ ปพ.1 กรุณารอสักครู่...', 0)
 
     if (rejectedFiles.length > 0) {
       logger.warn('Rejected Files:', rejectedFiles)

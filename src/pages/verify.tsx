@@ -403,8 +403,6 @@ const Verify = ({data = {} as any, submit}) => (
     </Container>
     <FormContainer>
       <Paper>
-        <Label>รูปประจำตัว</Label>
-        <Upload value={data.photo} disabled />
         <PersonalSection data={data} />
         <Label>ใบ ปพ. 1</Label>
         <UploadTranscript value={data.transcript} disabled />

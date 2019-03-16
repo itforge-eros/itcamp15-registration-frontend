@@ -107,8 +107,8 @@ export function Document(props) {
           content="พบกันเร็วๆ นี้ กับค่าย ITCAMP 15"
         />
 
-        <meta name="twitter:site" content="@jwcth" />
-        <meta name="twitter:creator" content="@jwcth" />
+        <meta name="twitter:site" content="@itcamp" />
+        <meta name="twitter:creator" content="@itcamp" />
 
         <meta
           name="twitter:image:src"
@@ -126,11 +126,11 @@ export function Document(props) {
           property="og:image"
           content="https://registration.jwc.in.th/images/og01031423.jpg"
         />
-        <meta property="og:url" content="https://registration.jwc.in.th/" />
+        <meta property="og:url" content="https://register.itcamp.in.th/" />
         <meta property="og:site_name" content="ITCAMP 15" />
         <meta property="og:locale" content="th_TH" />
-        <meta property="fb:admins" content="100000148980818" />
-        <meta property="fb:app_id" content="1540852432838036" />
+        <meta property="fb:admins" content="124521830897655" />
+        <meta property="fb:app_id" content="334922767025045" />
         <meta property="og:type" content="website" />
       </Head>
       <Body>{children}</Body>

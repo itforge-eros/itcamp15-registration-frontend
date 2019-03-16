@@ -25,7 +25,7 @@ const Row = styled.div`
 
 const Card = styled.div`
   display: flex;
-  algin-items: center;
+  align-items: center;
   flex-flow: column nowrap;
   justify-content: center;
 `

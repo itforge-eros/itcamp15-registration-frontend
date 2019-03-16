@@ -18,10 +18,19 @@ const Nav = styled.nav`
 
 export default () => {
   const major = getMajorFromPath()
+
+  enum Camps {
+    app = 'Appermort',
+    game = 'GrindelGame',
+    data = 'Dragota',
+    iot = 'Dobby of Things',
+    network = 'Netherine'
+  }
+
   return (
     <Nav>
       <span>Logout</span>
-      <span>ค่าย {major ? major[0].toUpperCase() + major.substr(1) : ''}</span>
+      <span>ค่าย {major ? Camps[major] : ''}</span>
     </Nav>
   )
 }

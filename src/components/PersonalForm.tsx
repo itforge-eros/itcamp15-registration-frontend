@@ -41,10 +41,10 @@ export const religions = {
 }
 
 export const grades = {
-  m3: 'ม.3 ขึ้น ม.4',
-  m4: 'ม.4 ขึ้น ม.5',
-  m5: 'ม.5 ขึ้น ม.6',
-  m6: 'ม.6 จบการศึกษา'
+  m4: 'กำลังศึกษาอยู่ ม.4',
+  m5: 'กำลังศึกษาอยู่ ม.5',
+  m6: 'กำลังศึกษาอยู่ ม.6',
+  p: 'ปวช. ปวส.'
 }
 
 export const genders = {
@@ -77,7 +77,6 @@ const Col = styled.div`
 const PersonalForm = ({next, handleSubmit, isDisabled = false}) => (
   <FormContainer onSubmit={handleSubmit}>
     <Paper>
-      <UploadField name="photo" />
       <Row>
         <Col>
           <Input wordy name="firstname" label="ชื่อ" placeholder="แฮรี่" />

@@ -14,7 +14,6 @@ import {SubmissionFormData} from './types'
 import {store} from '../common/App'
 
 export interface Fields extends SubmissionFormData {
-  photo: string
   transcript: string
   disease: string
   foodAllergy: string
@@ -71,9 +70,6 @@ function validate(values: Partial<Fields>) {
 
   const requiredFields = [...personalFields, ...parentFields]
   const questionFields = [...generalQuestionFields, ...majorQuestionFields]
-  if (!values.photo) {
-    errors.photo = 'กรุณาอัพโหลดรูปภาพ'
-  }
 
   if (!values.transcript) {
     errors.transcript = 'กรุณาอัพโหลด ปพ.1'
