@@ -39,7 +39,7 @@ export default {
     'react-static-plugin-sass'
   ],
   getSiteData: () => ({
-    title: "Junior Webmaster Camp"
+    title: 'ITCAMP 15'
   }),
   getRoutes: () => [
     {

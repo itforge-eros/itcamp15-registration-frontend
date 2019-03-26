@@ -148,7 +148,7 @@ const PersonalForm = ({next, handleSubmit, isDisabled = false}) => (
       <Underline />
       <Row>
         <Col style={{textAlign: 'center'}}>
-          <h2>ใบ ปพ. 1</h2>
+          <h2>ใบ ปพ. 1 หรือใบเกรดเทอมล่าสุด ที่มีการระบุปีการศึกษาชัดเจน</h2>
           <TranscriptUploadField name="transcript" />
         </Col>
       </Row>
@@ -167,7 +167,7 @@ const PersonalForm = ({next, handleSubmit, isDisabled = false}) => (
             <Input
               wordy
               name="phone"
-              label="เบอโทรศัพท์มือถือ"
+              label="เบอร์โทรศัพท์มือถือ"
               placeholder="0931354239"
             />
           </Row>

@@ -37,8 +37,8 @@ const DropZoneContainer = styled.div<DropZoneProp>`
   margin: 2em auto;
   margin-bottom: 3.8em;
 
-  width: 200px;
-  height: 200px;
+  width: 300px;
+  height: 300px;
 
   border: 1px solid #E0E0E0;
   border-radius: 4px;
@@ -255,7 +255,7 @@ class Upload extends Component<UploadProps, UploadState> {
                   <DropTitle>อัพโหลด</DropTitle>
                 )}
 
-                <Small>ปพ.1 เป็นรูปภาพ</Small>
+                <Small>ปพ.1 หรือ ใบเกรดล่าสุด เป็นรูปภาพ</Small>
               </Overlay>
             )}
           </DropZoneContainer>
